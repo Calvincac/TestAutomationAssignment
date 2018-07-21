@@ -23,8 +23,16 @@ module Oradian
             find(element_selector)
         end
 
+        def get_elements(element_selector)
+            all(element_selector)
+        end
+
         def clear_input(element_selector)
             find(element_selector).set('')
+        end
+
+        def go_back
+            page.go_back
         end
     end
 end

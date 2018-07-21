@@ -1,7 +1,7 @@
 
-login_page = Oradian::LoginPage.new
+login_page     = Oradian::LoginPage.new
 dashboard_page = Oradian::DashboardPage.new
-profile_page = Oradian::ProfilePage.new
+profile_page   = Oradian::ProfilePage.new
 
 Given("an Oradian customer opens the login page") do
     login_page.visit_login_page
@@ -26,19 +26,19 @@ And("the user expects to see profile page") do
 end
 
 And("the user checks the main buttons on the left side of the page") do
-    byebug
+    dashboard_page.check_left_side_links
 end
 
 And("the user checks the number of dashboards on the page") do
-    byebug
-end
-
-And("the user checks the number of dashboards on the page") do
-    byebug
+    dashboard_page.check_dashboards_quantity
 end
 
 And("the user try searching for something on the search field") do
     byebug
+end
+
+And("the user clicks on back") do
+    dashboard_page.go_back
 end
 
 Then("the user sees the latest activity stream") do

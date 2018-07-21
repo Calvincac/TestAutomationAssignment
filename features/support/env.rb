@@ -3,13 +3,9 @@ require 'rspec'
 require 'capybara/cucumber'
 require 'selenium-webdriver'
 require 'rspec/expectations'
-#require 'faraday'
-#require 'nokogiri'
 require 'logger'
 require 'byebug'
 require 'date'
-#require 'csv'
-#require 'fileutils'
 
 @timeout = ENV.key?('TIMEOUT') && ENV['TIMEOUT'] != '' ? ENV['TIMEOUT'] : 300
 @default_max_wait_time = 90
