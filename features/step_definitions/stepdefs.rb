@@ -37,11 +37,20 @@ And("the user try searching for something on the search field") do
     byebug
 end
 
+And("the user adds the filter rules") do
+    byebug
+end
+
+And("the user expects to see the information filtered") do
+    byebug
+end
+
 And("the user clicks on back") do
     dashboard_page.go_back
 end
 
 Then("the user sees the latest activity stream") do
-    byebug
+    dashboard_page.check_activity_streams
+    dashboard_page.check_activity_content
 end
 

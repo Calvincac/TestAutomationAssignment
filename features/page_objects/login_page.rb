@@ -8,11 +8,12 @@ module Oradian
         PASSWORD_FIELD       = '#pw1'
         WRONG_PASSWORD_TEXT  = 'pass'
         SIGNIN_BUTTON        = '.btn.btn-large.btn-primary'
-        DASHBOARD_SELECTOR   = '.fa-icon-dashboard'
+        DASHBOARD_SELECTOR   = '.dashboard-item-content'
         ERROR_MESSAGE        = '.fm_error_msg'
         USERNAME             = 'calvin'
         PASSWORD             = 'kreso123!'
         URL                  = 'https://qaecalvin.instafin.info'
+        DASHBOARD_LOADER     = '#ajaxBusy'
 
         def visit_login_page
             visit(URL)
@@ -45,6 +46,7 @@ module Oradian
 
         def check_dashboard
             page.should have_css(DASHBOARD_SELECTOR)
+            page.should have_no_css(DASHBOARD_LOADER)
         end
     end
 end
