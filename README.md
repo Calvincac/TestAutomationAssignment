@@ -5,7 +5,7 @@ The project should be run on a Linux machine.
 
 ### Prerequisites
 
-Linux
+Linux <br>
 Chrome (versions higher than 66)
 
 ## Ruby and Cucumber Setup
