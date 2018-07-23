@@ -15,5 +15,7 @@ Feature: As an Oradian customer
     And the user clicks on back 
     And the user expects to see the dashboard page
     And the user adds the filter rules
+    And the user expects to see the dashboard page
     And the user expects to see the information filtered
-    Then the user try searching for something on the search field
+    And the user tries searching for a client on the search field
+    Then the user expects to see the client page
