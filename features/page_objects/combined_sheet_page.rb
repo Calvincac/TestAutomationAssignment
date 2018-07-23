@@ -1,7 +1,8 @@
 module Oradian
 
     class CombinedSheet < BasePage
-        
+
+        @@client_page               = Oradian::ClientPage.new        
         DROPDOWN_LINK               = '.fa-icon-resize-small'
         NAVBAR_OPTIONS              = '.nav.nav-tabs > li:nth-child(6) > ul > li'
         OPTION_NAME                 = 'Combined Sheet'
@@ -29,6 +30,8 @@ module Oradian
         CLIENT_ID                   = '65770640'
         LINK_CELLS                  = '.Cells__clickable--2S2Yc'
         MONEY_CELLS                 = '.InstafinTable__currencyCell--3IEIT'
+        TOTAL_PAYMENT               = '.Cells__currencyInput--w093g'
+        PAYMENT_BUTTON_DISABLED     = 'button.btn.btn-danger[disabled]'
         
         def go_to_combined_sheet_page
             click_on_element(DROPDOWN_LINK) 
@@ -65,6 +68,7 @@ module Oradian
                 client_id_found = false 
             end
             expect(client_id_found).to be true
+            byebug
         end
 
         def validate_total_money
@@ -75,9 +79,18 @@ module Oradian
 
         def check_client_profile_from_result
             client_link = search_for_element_in_array(CLIENT_NAME, LINK_CELLS)
+            expect(client_link.text).to eq(CLIENT_NAME)            
             client_link.click
+            @@client_page.check_client_name(CLIENT_NAME)
         end
 
+        def check_total_payment
+            total_payment = get_element(TOTAL_PAYMENT)
+            expect(total_payment.value.to_f).to eq(0.0)
+            if total_payment.value.to_f == 0.0
+                page.should have_css(PAYMENT_BUTTON_DISABLED)
+            end
+        end
     end
 end
 

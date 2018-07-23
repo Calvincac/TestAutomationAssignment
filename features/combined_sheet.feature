@@ -13,4 +13,6 @@ Feature: As an Oradian customer
     And the user validates the expected quantity of combined sheet
     And the user validates the client id on the result
     And the user validates the Total Overdue and Total expected
+    And the user checks Total Payment and Payment Button disabled
     Then the user clicks on the client name to check profile
+    
