@@ -68,7 +68,6 @@ module Oradian
                 client_id_found = false 
             end
             expect(client_id_found).to be true
-            byebug
         end
 
         def validate_total_money
