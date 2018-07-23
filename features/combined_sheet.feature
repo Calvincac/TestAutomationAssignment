@@ -9,4 +9,4 @@ Feature: As an Oradian customer
     And the user expects to see the dashboard page
     And the user clicks on combined sheet link
     And the user expects to see combined sheet page
-    And the user searches for a specific combined sheet
+    Then the user searches for a specific combined sheet
