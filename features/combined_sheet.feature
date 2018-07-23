@@ -9,4 +9,8 @@ Feature: As an Oradian customer
     And the user expects to see the dashboard page
     And the user clicks on combined sheet link
     And the user expects to see combined sheet page
-    Then the user searches for a specific combined sheet
+    And the user searches for a specific combined sheet
+    And the user validates the expected quantity of combined sheet
+    And the user validates the client id on the result
+    And the user validates the Total Overdue and Total expected
+    Then the user clicks on the client name to check profile

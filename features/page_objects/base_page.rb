@@ -42,6 +42,27 @@ module Oradian
                     return element
                 end
             end
+            return nil
+        end
+
+        def add_filter_on_select_element(select_selector, chosen_option, options_selector)
+            click_on_element(select_selector)
+            option = search_for_element_in_array(chosen_option, options_selector)
+            option.click
+        end
+
+        def click_option_in_list_search(option_text, options)
+            option_button = search_for_element_in_array(option_text, options)
+            option_button.click
+        end
+
+        def retrieve_content_from_element(element_selector)
+            content = []
+            elements_list = get_elements(element_selector)            
+            elements_list.each do |element| 
+                content << element.text    
+            end
+            content
         end
     end
 end

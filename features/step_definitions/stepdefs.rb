@@ -10,8 +10,8 @@ Given("an Oradian customer opens the login page") do
 end
 
 When("the user logs in") do
-    login_page.validate_input_fields
-    login_page.enter_incorrect_information
+    #login_page.validate_input_fields
+    #login_page.enter_incorrect_information
     login_page.enter_correct_details
 end
 
@@ -71,4 +71,22 @@ end
 And("the user searches for a specific combined sheet") do
     combined_page.add_filters
 end
+
+And("the user validates the expected quantity of combined sheet") do
+    combined_page.validate_result
+end
+
+And("the user validates the client id on the result") do
+    combined_page.validate_client_found
+end
+
+And("the user clicks on the client name to check profile") do
+    combined_page.check_client_profile_from_result
+end
+
+And("the user validates the Total Overdue and Total expected") do
+    combined_page.validate_total_money
+end
+
+
 
