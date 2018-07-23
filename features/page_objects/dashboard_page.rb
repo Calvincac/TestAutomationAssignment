@@ -69,16 +69,8 @@ module Oradian
         def search_client
             enter_text(SEARCH_FIELD, SEARCH_TEXT)
             page.should have_css(SEARCH_FEEDBACK)
-            find_client_by_name(NAME_TO_BE_FOUND)
-        end
-
-        def find_client_by_name(name)
-            client_list = get_elements(CLIENTS_LIST)            
-            client_list.each do |client| 
-                if client.text == name
-                    client.click
-                end
-            end
+            client = search_for_element_in_array(NAME_TO_BE_FOUND, CLIENTS_LIST)
+            client.click
         end
     end
 end

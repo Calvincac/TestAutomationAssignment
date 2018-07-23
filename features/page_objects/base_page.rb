@@ -34,6 +34,15 @@ module Oradian
         def go_back
             page.go_back
         end
+        
+        def search_for_element_in_array(element_name, elements_selector)
+            elements_list = get_elements(elements_selector)            
+            elements_list.each do |element| 
+                if element.text == element_name
+                    return element
+                end
+            end
+        end
     end
 end
 
